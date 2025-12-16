@@ -37,8 +37,10 @@ Exemple:
 
 
 def descending_list_iterator(numbers_list):
-    # Write here your code
-    pass
+    # Creem una copia ordenada, descendent, de la llista
+    sorted_list = sorted(numbers_list, reverse=True)
+    # Retornem un iterador sobre la nova llista
+    return iter(sorted_list)
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
