@@ -51,22 +51,27 @@ Exemple:
 
 def average_score_ram(scores_dict):
     # Store the dictionary in RAM
-    # Write here your code
-    pass
+    total = 0
+    for value in scores_dict.values():
+        total += value
+    average_score = total / len(scores_dict)
+    return average_score
 
 
 def average_score_heap(scores_dict):
     # Store the dictionary in Heap    
     score_list = list(scores_dict.values())
     # You should correct and overwrite something in the following line.
-    heap_average = sum(score_list) 
+    heap_average = sum(score_list) / len(score_list)
     return heap_average
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 
-# scores_dict = {"Juan": 6.7, "Maria": 9.1, "Pedro": 6.5, "Tomas": 8.2, "Julio": 9}
 
-# print(average_score_ram(scores_dict))
-# print(average_score_heap(scores_dict))
+scores_dict = {"Juan": 6.7, "Maria": 9.1, "Pedro": 6.5, "Tomas": 8.2, "Julio": 9}
+
+print(average_score_ram(scores_dict))
+print(average_score_heap(scores_dict))
+
