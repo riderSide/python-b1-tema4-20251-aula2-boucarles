@@ -27,7 +27,7 @@ Es demana crear una interfície "Vehicles" que tingui un mètode abstracte "driv
 A més, cal crear les classes concretes "Car" i "Bicycle" que implementin
 la interfície "Vehicles".
 
-El mètode "drive" ha d'imprimir "Driving a car" per a la classe "Car" i "Riding"
+El mètode "drive" ha d'imprimir "Driving a car" per a la classe "Car" i "Riding
 a bicycle" per a la classe "Bicycle".
 
 Paràmetres:
@@ -48,22 +48,20 @@ Exemple:
 from abc import ABC, abstractmethod
 
 # Write abstract class Vehicles here 
-class Vehicles():
-    def drive(self):
-        # Write here your code
+class Vehicles(ABC):
+    @abstractmethod
+    def drive(self) -> str:
         pass
 
 # Corret and overwrite class Car(Vehicles) here 
-class Car():
+class Car(Vehicles):
     def drive(self):
-        # Write here your code
-        pass
+        return "Driving a car"
 
 # Corret and overwrite class Bicycle(Vehicles) here 
-class Bicycle():
+class Bicycle(Vehicles):
     def drive(self):
-        # Write here your code
-        pass
+        return "Riding a bicycle"
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
