@@ -52,10 +52,31 @@ Exemple:
 """
 
 def read_and_write():
-    # Write here your code
-    pass
+    file_name= 'file.txt'
+
+    name= input('Insert your name: ')
+    # check if name is a string
+    if not isinstance(name, str):
+        raise ValueError('Name must be a string')
+    
+    age= int(input('Insert your age: '))
+    if age < 0:
+        raise ValueError("Age must be a positive integer")
+
+    # store data into a text file
+    with open(file_name, 'w') as file:
+        file.write(f"{name}\n")
+        file.write(f"{age}\n")
+    
+
+    # read data from text file
+    with open(file_name, 'r') as file:
+        for line in file:
+            print(line.strip()) # use strip to remove new line
+
+
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# read_and_write()
+read_and_write()
